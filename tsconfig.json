@@ -29,7 +29,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "pages/api/PageInfo.js", "pages/api/Socials.js"  ],
   "exclude": [
     "node_modules"
   ]

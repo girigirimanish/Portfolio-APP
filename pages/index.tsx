@@ -9,8 +9,23 @@ import ContactMe from '../components/ContactMe'
 import { motion } from "framer-motion"
 import Link from "next/link"
 
-const Home = () => {
+//Static Site Generation
+export const getStaticProps = async()=>{
+
+  const exdata = await fetch('http://localhost:3000/api/Experience');
+  const data1 = await exdata.json();
+
+  const prdata = await fetch('http://localhost:3000/api/Projects');
+  const data2 = await prdata.json();
+
+  return{
+    props:{experience : data1, projects :data2}
+  }
+
+}
+const Home = ({experience,projects}) => {
   return (
+
     <div className="
     bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory 
     overflow-y-scroll overflow-x-hidden z-0 scrollbar
@@ -20,26 +35,26 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header/>
 
       <section id="hero" className='snap-start'>
-        <Hero  />
+        <Hero />
       </section>
 
       <section id="about" className='snap-center'>
-        <About  />
+        <About />
       </section>
 
       <section id="experience" className='snap-center'>
-        <WorkExperience  />
+        <WorkExperience experience={experience} />
       </section>
 
-      <section id="section" className='snap-start'>
+      <section id="skills" className='snap-start'>
         <Skills />
       </section>
 
       <section id="projects" className='snap-start'>
-        <Projects />
+        <Projects  projects={projects}/>
       </section>
 
       <section id="contactme" className='snap-start'>
