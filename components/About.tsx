@@ -4,27 +4,9 @@ import axios from 'axios'
 import { useEffect, useState } from "react"
 
 
-export default function About() {
-
-    const [pageInfos, setPageInfos] = useState([])
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        (async () => {
-            try {
-                const pageInfos = await axios.get('http://localhost:3000/api/PageInfo')
-                const pageInfosData = pageInfos.data
-                setPageInfos(pageInfosData)
-            } catch (error) {
-
-            } finally {
-                setIsLoading(false)
-            }
-
-        })();
-    }, []);
-
+export default function About({pageInfos}) {
     return (
+
         <motion.div
 
             initial={{ x: -200, opacity: 0 }}
@@ -43,7 +25,7 @@ export default function About() {
                 transition={{ duration: 1.2, }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                src="/profileimage.png"
+                src={pageInfos[0].profilePic?.url}
 
                 className='mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
             md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]'
@@ -54,15 +36,8 @@ export default function About() {
                     <span className='underline decoration-[#F7AB0A]/50'>little</span>{" "}
                     background
                 </h4>
-                {isLoading ? (
-                    <h1>Loading...</h1>
-                ) : (
-                    pageInfos.map((pageInfo) => (
-                        <div key={pageInfo._id}>
-                            <p className='text-base'>{pageInfo?.backgroundInformation}</p>
-                        </div>
-                    ))
-                )}
+                <p className='text-base'> {pageInfos[0].backgroundInformation}
+                </p>
             </div>
 
 

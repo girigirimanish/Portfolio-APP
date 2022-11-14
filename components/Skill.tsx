@@ -5,7 +5,7 @@ type Props = {
     directionLeft?: boolean;
 };
 
-function Skill({ directionLeft }: Props) {
+function Skill({skill,directionLeft}:Props) {
     return (
         <div className='group relative flex cursor-pointer'>
             <motion.img
@@ -15,7 +15,7 @@ function Skill({ directionLeft }: Props) {
                 }}
                 transition={{ duration: 1 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                src="next-js.svg"
+                src={skill.image.url}
                 className='rounded-full border-gray-500 objec w-24 h-24 md:w-28 md:h-28 xl:w-32 
             xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out'
             />
@@ -23,7 +23,7 @@ function Skill({ directionLeft }: Props) {
         ease-in-out group-hover:bg-white h-24 w-25 md:w-28 md:h-28 xl:w-32 xl:h-32
         rounded-full z-0'>
                 <div className='flex items-center justify-center h-full'>
-                    <p className='text-3xl font-bold text-black opacity-100'>100%</p>
+                    <p className='text-3xl font-bold text-black opacity-100'>{skill.progress}%</p>
                 </div>
             </div>
         </div>

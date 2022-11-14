@@ -24,19 +24,13 @@ export default function ExperienceCard({ experiences }) {
                 <h4 className='text-4xl font-light'>{experiences.jobTitle}</h4>
                 <p className='font-bold text-2xl mt-1'>{experiences.company}</p>
 
-                <div className='flex space-x-2 my-2'>
-                    <img
-                        className="h-10 w-10 rounded-full"
-                        src="/csharp.png" />
-                    <img
-                        className="h-10 w-10 rounded-full"
-                        src="/javascript.png" />
-                    <img
-                        className="h-10 w-10 rounded-full"
-                        src="/github.png" />
-                    <img
-                        className="h-10 w-10 rounded-full"
-                        src="/th.webp" />
+                <div className='flex space-x-2 my-2 '>
+                    {experiences.technologies.map((technology) => (
+                        <img
+                            key={technology._id}
+                            className="h-10 w-10 rounded-full"
+                            src={technology.url} />
+                    ))}
                 </div>
 
                 <p className='uppercase py-5 text-gray-500'>

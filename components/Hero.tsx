@@ -7,11 +7,11 @@ import BackgroundCircles from "../components/BackgroundCircles"
 import Link from 'next/link'
 
 
-function Hero() {
+function Hero({pageInfos}) {
 
     const [text, count] = useTypewriter({
         words: [
-            `Hi, The Name's Manish`,
+            `Hi, The Name's ${pageInfos[0].name}`,
             "Loves-Music-and-Coffee.tsx",
             "<ButLovesToCodeMore/>"],
         loop: true,
@@ -24,7 +24,7 @@ function Hero() {
 
             <BackgroundCircles />
             <img className="relative rounded-full h-32 w-32 mx-auto object-cover"
-                src="/profileimage.png" />
+                src={pageInfos[0].heroImage.url}/>
 
             <div className='z-20'>
                 <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]"

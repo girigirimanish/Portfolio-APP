@@ -31,9 +31,12 @@ function Projects({ projects }) {
                                 {project?.title}
                             </h4>
 
-                            <div className='felx flex-row items-center space-x-2 justify-center'>
+                            <div className='flex space-x-2 my-2 items-center justify-center'>
                             {project?.technologies.map(technology =>(
-                                <div key={technology._id}> {technology._id}</div>
+                                <img key={technology._id}
+                                className='h-10 w-10'
+                                src={technology.url}
+                                /> 
                             ))} 
                             </div>
 

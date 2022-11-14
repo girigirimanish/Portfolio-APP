@@ -18,12 +18,18 @@ export const getStaticProps = async()=>{
   const prdata = await fetch('http://localhost:3000/api/Projects');
   const data2 = await prdata.json();
 
+  const skdata = await fetch('http://localhost:3000/api/Skills');
+  const data3 = await skdata.json();
+
+  const pgdata = await fetch('http://localhost:3000/api/PageInfo');
+  const data4 = await pgdata.json();
+
   return{
-    props:{experience : data1, projects :data2}
+    props:{experience : data1, projects :data2, skills:data3,pageInfos:data4}
   }
 
 }
-const Home = ({experience,projects}) => {
+const Home = ({experience,projects,skills,pageInfos}) => {
   return (
 
     <div className="
@@ -38,11 +44,11 @@ const Home = ({experience,projects}) => {
       <Header/>
 
       <section id="hero" className='snap-start'>
-        <Hero />
+        <Hero pageInfos={pageInfos}/>
       </section>
 
       <section id="about" className='snap-center'>
-        <About />
+        <About pageInfos={pageInfos}/>
       </section>
 
       <section id="experience" className='snap-center'>
@@ -50,7 +56,7 @@ const Home = ({experience,projects}) => {
       </section>
 
       <section id="skills" className='snap-start'>
-        <Skills />
+        <Skills skills={skills}/>
       </section>
 
       <section id="projects" className='snap-start'>
