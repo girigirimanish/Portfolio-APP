@@ -36,7 +36,7 @@ export default function Header() {
         {isLoading?(
           <h1>Loading...</h1>
         ):(
-          socials.map((social) => (
+          socials.map((social:any) => (
             <SocialIcon
               key={social._id}
               url={social.url}

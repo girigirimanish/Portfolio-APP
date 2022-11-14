@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import axios from 'axios'
 import { useEffect, useState } from "react"
 
-export default function ExperienceCard({ experiences }) {
+export default function ExperienceCard({ experiences }:any) {
 
     return (
         <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
@@ -25,7 +25,7 @@ export default function ExperienceCard({ experiences }) {
                 <p className='font-bold text-2xl mt-1'>{experiences.company}</p>
 
                 <div className='flex space-x-2 my-2 '>
-                    {experiences.technologies.map((technology) => (
+                    {experiences.technologies.map((technology:any) => (
                         <img
                             key={technology._id}
                             className="h-10 w-10 rounded-full"
@@ -40,7 +40,7 @@ export default function ExperienceCard({ experiences }) {
                 </p>
 
                 <ul className='list-disc space-y-4 ml-5 text-lg max-h-96 overflow scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80 pr-5'>
-                    {experiences.points?.map((point, i) => (
+                    {experiences.points?.map((point:any, i:any) => (
                         <li key={i}>{point}</li>
                     ))}
                 </ul>

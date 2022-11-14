@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useEffect, useState } from "react"
 
 
-export default function About({pageInfos}) {
+export default function About({pageInfos}:any) {
     return (
 
         <motion.div

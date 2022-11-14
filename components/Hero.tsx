@@ -7,7 +7,7 @@ import BackgroundCircles from "../components/BackgroundCircles"
 import Link from 'next/link'
 
 
-function Hero({pageInfos}) {
+function Hero({pageInfos}:any) {
 
     const [text, count] = useTypewriter({
         words: [

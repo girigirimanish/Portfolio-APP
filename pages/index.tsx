@@ -29,7 +29,7 @@ export const getStaticProps = async()=>{
   }
 
 }
-const Home = ({experience,projects,skills,pageInfos}) => {
+const Home = ({experience,projects,skills,pageInfos}:any) => {
   return (
 
     <div className="
