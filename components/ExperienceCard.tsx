@@ -2,8 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { motion } from "framer-motion"
-import axios from 'axios'
-import { useEffect, useState } from "react"
+
 
 export default function ExperienceCard({ experiences }:any) {
 

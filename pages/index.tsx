@@ -12,20 +12,20 @@ import Link from "next/link"
 //Static Site Generation
 export const getStaticProps = async()=>{
 
-  const exdata = await fetch('http://localhost:3000/api/Experience');
-  const data1 = await exdata.json();
+  const experienceResponse = await fetch('http://localhost:3000/api/Experience');
+  const experience = await experienceResponse.json();
 
-  const prdata = await fetch('http://localhost:3000/api/Projects');
-  const data2 = await prdata.json();
+  const projectsResponse = await fetch('http://localhost:3000/api/Projects');
+  const projects = await projectsResponse.json();
 
-  const skdata = await fetch('http://localhost:3000/api/Skills');
-  const data3 = await skdata.json();
+  const skillsResponse = await fetch('http://localhost:3000/api/Skills');
+  const skills = await skillsResponse.json();
 
-  const pgdata = await fetch('http://localhost:3000/api/PageInfo');
-  const data4 = await pgdata.json();
+  const pageInfosResponse = await fetch('http://localhost:3000/api/PageInfo');
+  const pageInfos = await pageInfosResponse.json();
 
   return{
-    props:{experience : data1, projects :data2, skills:data3,pageInfos:data4}
+    props:{experience, projects,skills,pageInfos}
   }
 
 }

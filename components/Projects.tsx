@@ -33,9 +33,10 @@ function Projects({ projects }:any) {
 
                             <div className='flex space-x-2 my-2 items-center justify-center'>
                             {project?.technologies.map((technology:any) =>(
-                                <img key={technology._id}
+                                <Image key={technology._id}
                                 className='h-10 w-10'
                                 src={technology.url}
+                                alt=""
                                 /> 
                             ))} 
                             </div>
