@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { motion } from "framer-motion"
+
 
 
 export default function ExperienceCard({ experiences }:any) {
@@ -23,12 +22,16 @@ export default function ExperienceCard({ experiences }:any) {
                 <h4 className='text-4xl font-light'>{experiences.jobTitle}</h4>
                 <p className='font-bold text-2xl mt-1'>{experiences.company}</p>
 
-                <div className='flex space-x-2 my-2 '>
+                <div className='flex space-x-2 my-2 h-10 w-10 rounded-full'>
                     {experiences.technologies.map((technology:any) => (
-                        <img
+
+                            <motion.img 
                             key={technology._id}
-                            className="h-10 w-10 rounded-full"
-                            src={technology.url} />
+                            src={technology.url}
+                            alt=""
+                            className='h-10 w-10 rounded-full'
+                            />
+                        
                     ))}
                 </div>
 

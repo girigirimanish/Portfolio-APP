@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   switch (req.method) {
     case "POST":
       const bodyObject = JSON.parse(req.body);
-      let newSocial = await db.collection("socials").insertOne(bodyObject);
+      const newSocial = await db.collection("socials").insertOne(bodyObject);
       res.json(newSocial.ops[0]);
       break;
     case "GET":

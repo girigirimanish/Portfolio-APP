@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion"
-import Image from 'next/image'
-function Projects({ projects }:any) {
+
+function Projects({ projects }: any) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -13,7 +13,7 @@ function Projects({ projects }:any) {
             </h3>
 
             <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-                {projects?.map((project:any, i:any) => (
+                {projects?.map((project: any, i: any) => (
                     <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
                         <motion.img
                             initial={{ y: -300, opacity: 0 }}
@@ -21,7 +21,7 @@ function Projects({ projects }:any) {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             src={project.image.url}
-                            />
+                        />
 
                         <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
                             <h4 className='text-4xl font-semibold text-center'>
@@ -32,13 +32,17 @@ function Projects({ projects }:any) {
                             </h4>
 
                             <div className='flex space-x-2 my-2 items-center justify-center'>
-                            {project?.technologies.map((technology:any) =>(
-                                <Image key={technology._id}
-                                className='h-10 w-10'
-                                src={technology.url}
-                                alt=""
-                                /> 
-                            ))} 
+                                {project?.technologies.map((technology: any) => (
+
+                                        <motion.img
+                                            key={technology._id}
+                                            className='h-10 w-10'
+                                            src={technology.url}
+                                            alt=""
+                                        />
+
+
+                                ))}
                             </div>
 
                             <p className='text-lg text-center md:text-left'>

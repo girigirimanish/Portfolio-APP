@@ -1,9 +1,13 @@
+const { LayoutGroup } = require('framer-motion')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images:{
-    domains:['share.internxt.com']
+    domains:['res.cloudinary.com'],
+    loader:'cloudinary',
+    path:'https://res.cloudinary.com/dfhcuoi1e/image/upload/v1668422202/'
   }
 }
 
