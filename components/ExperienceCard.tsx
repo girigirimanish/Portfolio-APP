@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 
 
-export default function ExperienceCard({ experiences }:any) {
+export default function ExperienceCard({ experiences }: any) {
 
     return (
         <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
@@ -23,15 +23,15 @@ export default function ExperienceCard({ experiences }:any) {
                 <p className='font-bold text-2xl mt-1'>{experiences.company}</p>
 
                 <div className='flex space-x-2 my-2 h-10 w-10 rounded-full'>
-                    {experiences.technologies.map((technology:any) => (
+                    {experiences.technologies.map((technology: any) => (
 
-                            <motion.img 
+                        <motion.img
                             key={technology._id}
                             src={technology.url}
                             alt=""
                             className='h-10 w-10 rounded-full'
-                            />
-                        
+                        />
+
                     ))}
                 </div>
 
@@ -42,7 +42,7 @@ export default function ExperienceCard({ experiences }:any) {
                 </p>
 
                 <ul className='list-disc space-y-4 ml-5 text-lg max-h-96 overflow scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80 pr-5'>
-                    {experiences.points?.map((point:any, i:any) => (
+                    {experiences.points?.map((point: any, i: any) => (
                         <li key={i}>{point}</li>
                     ))}
                 </ul>

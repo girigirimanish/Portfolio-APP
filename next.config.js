@@ -5,7 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images:{
-    domains:['res.cloudinary.com'],
+    domains:['https://res.cloudinary.com'],
     loader:'cloudinary',
     path:'https://res.cloudinary.com/dfhcuoi1e/image/upload/v1668422202/'
   }

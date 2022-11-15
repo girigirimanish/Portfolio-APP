@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import ExperienceCard from '../components/ExperienceCard'
 
 
-export default function WorkExperience({experience}:any) {
+export default function WorkExperience({ experience }: any) {
 
   return (
     <motion.div
@@ -19,9 +19,9 @@ export default function WorkExperience({experience}:any) {
       <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory
         scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
 
-        {experience?.map((experiences:any)=>(
-              <ExperienceCard key={experiences._id} experiences={experiences}/>
-            ))}
+        {experience?.map((experiences: any) => (
+          <ExperienceCard key={experiences._id} experiences={experiences} />
+        ))}
       </div>
     </motion.div>
   )

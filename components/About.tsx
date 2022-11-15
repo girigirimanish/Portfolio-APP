@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from "framer-motion"
 
 
-export default function About({pageInfos}:any) {
+export default function About({ pageInfos }: any) {
     return (
 
         <motion.div

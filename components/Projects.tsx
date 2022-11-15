@@ -34,12 +34,12 @@ function Projects({ projects }: any) {
                             <div className='flex space-x-2 my-2 items-center justify-center'>
                                 {project?.technologies.map((technology: any) => (
 
-                                        <motion.img
-                                            key={technology._id}
-                                            className='h-10 w-10'
-                                            src={technology.url}
-                                            alt=""
-                                        />
+                                    <motion.img
+                                        key={technology._id}
+                                        className='h-10 w-10'
+                                        src={technology.url}
+                                        alt=""
+                                    />
 
 
                                 ))}

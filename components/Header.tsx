@@ -6,23 +6,23 @@ import { useEffect, useState } from "react"
 
 
 export default function Header() {
-  const [socials,setSocials]= useState([])
-  const [isLoading,setIsLoading] = useState(true);
+  const [socials, setSocials] = useState([])
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() =>{
-    (async() =>{
+  useEffect(() => {
+    (async () => {
       try {
         const socials = await axios.get('http://localhost:3000/api/Socials')
         const socialsData = socials.data
         setSocials(socialsData)
       } catch (error) {
-        
-      }finally{
+
+      } finally {
         setIsLoading(false)
       }
-      
-    } )();
-  },[]);
+
+    })();
+  }, []);
 
 
   return (
@@ -33,10 +33,10 @@ export default function Header() {
         transition={{ duration: 1.5 }}
         className='flex flex-row items-center'>
         {/* <pre>{JSON.stringify(data,null,2)}</pre> */}
-        {isLoading?(
+        {isLoading ? (
           <h1>Loading...</h1>
-        ):(
-          socials.map((social:any) => (
+        ) : (
+          socials.map((social: any) => (
             <SocialIcon
               key={social._id}
               url={social.url}
