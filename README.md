@@ -17,9 +17,13 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 This is a dynamic portfolio web app and is supposed to be integrated with a cms built using nodejs
 The front-end part is almost done but the cms is yet to be built
 
-## Features to be Implemented
+## CMS
 
+Get/POST Routes are created
+Features yet to be developed
 
+1)CMS Admin panel
+2)CMS using NodeJS
 
 ## Deploy on Vercel
 
